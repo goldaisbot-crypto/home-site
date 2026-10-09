@@ -9,10 +9,11 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left: Text */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 60, rotateX: 12 }}
+            whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
             viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            style={{ transformPerspective: 1000 }}
           >
             <span className="label-gold mb-4 block">About Us</span>
             <h2 className="heading-section mb-6">Who We Are</h2>
@@ -37,10 +38,11 @@ export default function About() {
 
           {/* Right: Image composition */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 60, rotateX: -12 }}
+            whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
             viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            style={{ transformPerspective: 1000 }}
             className="relative"
           >
             <div className="grid grid-cols-5 gap-4">
@@ -50,6 +52,7 @@ export default function About() {
                   src="https://images.unsplash.com/photo-1613977257363-707ba9348227?w=900&q=80&auto=format&fit=crop"
                   alt="Luxury modern home with pool, architectural photography"
                   loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-105"
                 />
               </div>
@@ -59,6 +62,7 @@ export default function About() {
                   src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=500&q=80&auto=format&fit=crop"
                   alt="Modern glass architecture detail"
                   loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-105"
                 />
                 {/* Circular arrow button */}

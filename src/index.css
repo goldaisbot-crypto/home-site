@@ -86,3 +86,33 @@
   0%   { transform: translateX(-100%); }
   100% { transform: translateX(200%); }
 }
+
+/* ---- Lenis smooth scroll ---- */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* ---- Performance: skip rendering for off-screen sections ---- */
+section.section-padding {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 1200px;
+}
+
+/* ---- 3D card hover effect ---- */
+.tilt-3d {
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s ease;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform;
+}
+.tilt-3d:hover {
+  transform: perspective(1000px) rotateX(-3deg) rotateY(3deg) translateZ(12px) scale(1.01);
+}
+
+/* ---- GPU acceleration for animated elements ---- */
+.gpu {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}

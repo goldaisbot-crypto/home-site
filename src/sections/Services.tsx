@@ -7,10 +7,11 @@ export default function Services() {
     <section id="services" className="section-padding bg-paper">
       <div className="container-luxury">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 50, rotateX: 10 }}
+          whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
           viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8 }}
+          style={{ transformPerspective: 1000 }}
           className="max-w-2xl mb-14"
         >
           <span className="label-gold mb-3 block">Our Services</span>
@@ -25,10 +26,11 @@ export default function Services() {
           {services.map((service, i) => (
             <motion.div
               key={service.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 50, rotateX: 12 }}
+              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
               viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.5, delay: (i % 3) * 0.1 }}
+              transition={{ duration: 0.7, delay: (i % 3) * 0.1 }}
+              style={{ transformPerspective: 1000 }}
               className="group relative bg-paper p-8 lg:p-10 transition-colors duration-500 hover:bg-ivory cursor-pointer"
             >
               {/* Number */}

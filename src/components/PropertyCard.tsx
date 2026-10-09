@@ -18,7 +18,7 @@ export default function PropertyCard({ property, variant = 'default', index = 0 
     return (
       <Link
         to={`/properties/${property.slug}`}
-        className="group relative block flex-shrink-0 overflow-hidden rounded-2xl bg-navy"
+        className="group relative block flex-shrink-0 overflow-hidden rounded-2xl bg-navy tilt-3d"
         style={{ width: 'min(560px, 80vw)' }}
         aria-label={`View ${property.name}`}
       >
@@ -74,14 +74,15 @@ export default function PropertyCard({ property, variant = 'default', index = 0 
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 50, rotateX: 12 }}
+      whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
       viewport={{ once: true, margin: '-50px' }}
-      transition={{ duration: 0.6, delay: (index % 3) * 0.1 }}
+      transition={{ duration: 0.7, delay: (index % 3) * 0.1 }}
+      style={{ transformPerspective: 1000 }}
     >
       <Link
         to={`/properties/${property.slug}`}
-        className="group block overflow-hidden rounded-2xl bg-paper transition-shadow duration-500 hover:shadow-xl hover:shadow-navy/5"
+        className="group block overflow-hidden rounded-2xl bg-paper tilt-3d hover:shadow-xl hover:shadow-navy/5"
         aria-label={`View ${property.name}`}
       >
         <div className="relative aspect-[4/3] overflow-hidden">

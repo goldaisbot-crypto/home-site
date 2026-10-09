@@ -7,10 +7,11 @@ export default function Team() {
     <section id="team" className="section-padding bg-ivory">
       <div className="container-luxury">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 50, rotateX: 10 }}
+          whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
           viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8 }}
+          style={{ transformPerspective: 1000 }}
           className="text-center mb-14"
         >
           <span className="label-gold mb-3 block">Our Team</span>
@@ -21,10 +22,11 @@ export default function Team() {
           {teamMembers.map((member, i) => (
             <motion.div
               key={member.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 50, rotateX: 12 }}
+              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
               viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
+              transition={{ duration: 0.7, delay: i * 0.1 }}
+              style={{ transformPerspective: 1000 }}
               className="group"
             >
               <div className="relative aspect-[3/4] rounded-2xl overflow-hidden mb-5">

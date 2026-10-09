@@ -10,10 +10,11 @@ export default function FeaturedProperties() {
     <section id="featured" className="section-padding bg-ivory">
       <div className="container-luxury">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 50, rotateX: 10 }}
+          whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
           viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8 }}
+          style={{ transformPerspective: 1000 }}
           className="text-center mb-12"
         >
           <span className="label-gold mb-3 block">Featured</span>

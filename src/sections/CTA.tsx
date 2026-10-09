@@ -7,10 +7,11 @@ export default function CTA() {
     <section className="py-16 md:py-24 bg-paper">
       <div className="container-luxury">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 60, rotateX: 12 }}
+          whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
           viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          style={{ transformPerspective: 1000 }}
           className="rounded-3xl bg-surface px-8 md:px-14 py-12 md:py-16 flex flex-col md:flex-row items-center gap-8 md:gap-10"
         >
           {/* Key icon */}
